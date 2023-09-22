@@ -45,3 +45,11 @@ a:active{
     background-color: red;
     color: white;
 }
+
+p:nth-child(odd){
+    background-color: darksalmon;
+}
+
+p:nth-child(even){
+    background-color: lightcyan;
+}

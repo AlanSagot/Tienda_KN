@@ -1,0 +1,47 @@
+
+#encabezado {
+    color: aquamarine;
+    font-weight: bold;
+}
+
+#TituloPrincipal{
+    color: green;
+}
+
+.ParrafosCentrados{
+    text-align: center;
+    font-weight: bold;
+    color: chocolate;
+}
+
+.textoVerde{
+    color:green;   
+}
+
+* {
+    color: whitesmoke;
+}
+
+p, h1, span {
+    color: lightskyblue;
+}
+
+a:link {
+    background-color: green;
+    color: white;
+}
+
+a:visited{
+    background-color: violet;
+    color: white;
+}
+
+a:hover{
+    background-color: darkblue;
+    color: white;
+}
+
+a:active{
+    background-color: red;
+    color: white;
+}

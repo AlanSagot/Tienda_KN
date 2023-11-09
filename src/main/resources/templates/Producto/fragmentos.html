@@ -42,6 +42,10 @@
                                 <div class="mb-3">
                                     <label for="idCategoria">[[#{producto.categoria}]]</label>
                                     <input type="number" class="form-control" name="idCategoria" required="true"/>
+                                    <select name="categoria.idCategoria" class="form-control">
+                                        <option th:each="item : ${categorias}" th:value="item.idCategoria">[[${item.descripcion}]]</option>
+                                    </select><select>
+                                        
                                 </div>
                                 <div class="mb-3">
                                     <label for="descripcion">[[#{producto.descripcion}]]</label>
@@ -95,7 +99,7 @@
                                             <th>[[#{producto.precio}]]</th>
                                             <th>[[#{producto.existencias}]]</th>
                                             <th>[[#{producto.activo}]]</th>
-                                            <th>[[#{producto.producto}]]</th>
+                                            <th>[[#{producto.categoria}]]</th>
                                             <th></th></tr>
                                     </thead>
                                     <tbody>
@@ -105,7 +109,7 @@
                                             <th>[[${producto.precio}]]</th>
                                             <th>[[${producto.existencias}]]</th>
                                             <td th:text="${producto.activo} ? 'Activa' : 'Inactiva'" />
-                                            <th>[[${producto.idProducto}]]</th>
+                                            <th>[[${producto.categoria.descripcion}]]</th>
                                             <td>
                                                 <a th:href="@{/producto/eliminar/}+${producto.idProducto}"
                                                    class="btn btn-danger">

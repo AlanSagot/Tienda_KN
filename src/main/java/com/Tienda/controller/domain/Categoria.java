@@ -5,8 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
 
 @Data // PARA LA CREACION AUTOMATICA DE LOS SET AND GET DE LOS ATRIBUTOS
@@ -23,16 +26,18 @@ public class Categoria implements Serializable{
     private String descripcion;
     private String rutaImagen;
     private boolean activo;
-
-    public Categoria(String descripcion, String rutaImagen, boolean activo) {
-        this.descripcion = descripcion;
-        this.rutaImagen = rutaImagen;
-        this.activo = activo;
-    }
+    
+    @OneToMany
+    @JoinColumn(name="id_categoria",insertable = false, updatable = false)
+    List<Producto> productos;
 
     public Categoria() {
     }
 
-   
+   public Categoria(String descripcion, String rutaImagen, boolean activo){
+       this.descripcion = descripcion;
+       this.rutaImagen = rutaImagen;
+       this.activo = activo;
+   }
     
 }

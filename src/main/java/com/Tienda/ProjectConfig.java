@@ -1,6 +1,5 @@
 package com.Tienda;
 
-import com.Tienda.service.UsuarioService;
 import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -21,6 +20,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+import com.Tienda.service.UsuarioDetailsService;
 
 @Configuration
 public class ProjectConfig implements WebMvcConfigurer{
@@ -65,30 +65,30 @@ public class ProjectConfig implements WebMvcConfigurer{
         registry.addViewController("/registro/nuevo").setViewName("/registro/nuevo");
     }
     
-//    /* El siguiente método se utiliza para completar la clase no es 
-//    realmente funcional, la próxima semana se reemplaza con usuarios de BD */    
-//    @Bean
-//    public UserDetailsService users() {
-//        //USUARIO Admin
-//        UserDetails admin = User.builder()
-//                .username("juan")
-//                .password("{noop}123")
-//                .roles("USER", "VENDEDOR", "ADMIN")
-//                .build();
-//        //USUARIO Vendedor
-//        UserDetails sales = User.builder()
-//                .username("rebeca")
-//                .password("{noop}456")
-//                .roles("USER", "VENDEDOR")
-//                .build();
-//        //USURIO user
-//        UserDetails user = User.builder()
-//                .username("pedro")
-//                .password("{noop}789")
-//                .roles("USER")
-//                .build();
-//        return new InMemoryUserDetailsManager(user, sales, admin);
-//    }
+    /* El siguiente método se utiliza para completar la clase no es 
+    realmente funcional, la próxima semana se reemplaza con usuarios de BD     
+    @Bean
+    public UserDetailsService users() {
+        //USUARIO Admin
+        UserDetails admin = User.builder()
+                .username("juan")
+                .password("{noop}123")
+                .roles("USER", "VENDEDOR", "ADMIN")
+                .build();
+        //USUARIO Vendedor
+        UserDetails sales = User.builder()
+                .username("rebeca")
+                .password("{noop}456")
+                .roles("USER", "VENDEDOR")
+                .build();
+        //USUARIO user
+        UserDetails user = User.builder()
+                .username("pedro")
+                .password("{noop}789")
+                .roles("USER")
+                .build();
+        return new InMemoryUserDetailsManager(user, sales, admin);
+    }*/
     
     @Autowired
     private UserDetailsService userDetailsService;
